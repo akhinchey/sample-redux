@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.scss';
+import './styles/index.css';
 import $ from "jquery";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
