@@ -4,6 +4,13 @@ import RecipeLabels from './recipe-labels';
 
 
 export default class RecipeDetails extends React.Component {
+
+    openModal = () => {
+        if (!this.props.modalIsOpen) {
+            this.props.toggleModalStatus()
+        }
+    }
+
     render () {
         const { recipe } = this.props;
 
@@ -12,7 +19,7 @@ export default class RecipeDetails extends React.Component {
         })
 
         const learnMoreButton = recipe.isHover
-                                ? <button>Learn More</button>
+                                ? <button onClick={() => {this.openModal()}}>Learn More</button>
                                 : null;
 
         return (

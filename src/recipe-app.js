@@ -11,7 +11,8 @@ import {setRecipes,
     deleteRecipeParam,
     handleFilterCheck,
     handleFilterVisibility,
-    updateResultRange} from './actions';
+    updateResultRange,
+    toggleModalStatus} from './actions';
 
 
 export class RecipeAppContainer extends React.Component {
@@ -66,7 +67,9 @@ export class RecipeAppContainer extends React.Component {
                                 getNewRecipes={this.getNewRecipes}
                                 toggleRecipeHover={this.props.toggleRecipeHover}
                                 recipes={this.props.recipes}
-                                updateResultRange={this.props.updateResultRange} />
+                                updateResultRange={this.props.updateResultRange}
+                                modalIsOpen={this.props.modalIsOpen}
+                                toggleModalStatus={this.props.toggleModalStatus} />
         )    
     }
 }
@@ -76,7 +79,8 @@ const mapStateToProps = (state) => {
         ingredients: state.ingredients,
         recipes: recipeSet(state),
         dietFilters: state.dietFilters,
-        range: state.range
+        range: state.range,
+        modalIsOpen: state.modalIsOpen
     }
 }
 
@@ -88,7 +92,8 @@ const mapDispatchToProps = (dispatch) => {
         toggleRecipeHover: toggleRecipeHover,
         handleFilterCheck: handleFilterCheck,
         handleFilterVisibility: handleFilterVisibility,
-        updateResultRange: updateResultRange
+        updateResultRange: updateResultRange,
+        toggleModalStatus: toggleModalStatus
     }, dispatch)
 }
 

@@ -29,7 +29,9 @@ export default class RecipeAppComponent extends React.Component {
                 <br />
                 <RecipeCollection toggleRecipeHover={this.props.toggleRecipeHover}
                                   recipes={this.props.recipes}
-                                  updateResultRange={this.props.updateResultRange} />
+                                  updateResultRange={this.props.updateResultRange}
+                                  modalIsOpen={this.props.modalIsOpen}
+                                  toggleModalStatus={this.props.toggleModalStatus} />
                 </div>
             </div>
         )

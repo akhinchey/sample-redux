@@ -5,8 +5,10 @@ import {
     HANDLE_FILTER_CHECK,
     HANDLE_FILTER_VISIBILITY,
     TOGGLE_RECIPE_HOVER,
-    UPDATE_RESULT_RANGE
+    UPDATE_RESULT_RANGE,
+    TOGGLE_MODAL_STATUS
 } from './actions';
+
 
 let dietFilters = {
     visible: false,
@@ -22,8 +24,10 @@ const initialState = {
     ingredients: [],
     recipes: [],
     dietFilters: dietFilters,
-    range: {start: 0, end: 10}
+    range: {start: 0, end: 10},
+    modalIsOpen: false
 };
+
 
 const recipeAppReducer = (state = initialState, action) => {
     switch(action.type) {
@@ -98,6 +102,12 @@ const recipeAppReducer = (state = initialState, action) => {
                     ...state.range,
                     end: state.range.end + 10
                 }
+            }
+
+        case TOGGLE_MODAL_STATUS:
+            return {
+                ...state,
+                modalIsOpen: !state.modalIsOpen
             }
 
         default:

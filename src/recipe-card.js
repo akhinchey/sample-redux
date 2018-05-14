@@ -10,7 +10,7 @@ export default class RecipeCard extends React.Component {
     }
 
     render () {
-        const {index, recipe} = this.props;
+        const {index, recipe, modalIsOpen, toggleModalStatus} = this.props;
 
         const classes = classNames({
             "recipe-card" : true,
@@ -24,7 +24,9 @@ export default class RecipeCard extends React.Component {
                     <img alt="recipe pic" src={recipe.data.image} />
                 </div>
 
-                <RecipeDetails recipe={recipe} />
+                <RecipeDetails recipe={recipe}
+                               modalIsOpen={modalIsOpen}
+                               toggleModalStatus={toggleModalStatus} />
             </div>
         )
     }

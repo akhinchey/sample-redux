@@ -6,6 +6,8 @@ export const TOGGLE_RECIPE_HOVER = 'TOGGLE_RECIPE_HOVER';
 export const HANDLE_FILTER_CHECK = 'HANDLE_FILTER_CHECK';
 export const HANDLE_FILTER_VISIBILITY = 'HANDLE_FILTER_VISIBILITY';
 export const UPDATE_RESULT_RANGE = 'UPDATE_RESULT_RANGE';
+export const TOGGLE_MODAL_STATUS = 'TOGGLE_MODAL_STATUS';
+
 
  export const addRecipeParam = (text) => {
     return {
@@ -51,5 +53,11 @@ export const handleFilterVisibility = () => {
 export const updateResultRange = () => {
     return {
         type: UPDATE_RESULT_RANGE
+    }
+}
+
+export const toggleModalStatus = () => {
+    return {
+        type: TOGGLE_MODAL_STATUS
     }
 }
