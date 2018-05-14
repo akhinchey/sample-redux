@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import RecipeCard from './recipe-card';
 
 export default class RecipeCollection extends React.Component {
@@ -12,8 +13,12 @@ export default class RecipeCollection extends React.Component {
             return null;
         }
 
+        const containerClasses = classNames({
+            "recipe-container" : true,
+        })
+
         return (
-            <div>
+            <div className={containerClasses}>
                 <h2>Recipe Results:</h2>
                 {recipes.map((recipe, index) => {
                     return (
@@ -31,4 +36,3 @@ export default class RecipeCollection extends React.Component {
         )
     }
 }
-

@@ -12,11 +12,9 @@ let dietFilters = {
     visible: false,
     filters: [
             {name: "balanced", checked : false},
-            {name: "high-fiber", checked : false},
             {name: "high-protein", checked : false},
             {name: "low-carb", checked : false},
-            {name: "low-fat", checked : false},
-            {name: "low-sodium", checked : false}
+            {name: "low-fat", checked : false}
     ]
 }
 

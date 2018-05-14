@@ -23,6 +23,7 @@ export class RecipeAppContainer extends React.Component {
 
         const filter = this.props.dietFilters.filters
                             .find(filter => filter.checked);
+
         let apiURL = "https://api.edamam.com/search?q="
                        + params + "&from=0&to=100&app_id=" + appId + "&app_key=" + apiKey;
         
