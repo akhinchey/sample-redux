@@ -5,9 +5,10 @@ import RecipeLabels from './recipe-labels';
 
 export default class RecipeDetails extends React.Component {
 
-    openModal = () => {
+    openModal = (recipe) => {
         if (!this.props.modalIsOpen) {
-            this.props.toggleModalStatus()
+            this.props.toggleModalStatus();
+            this.props.setModalRecipe(recipe);
         }
     }
 
@@ -19,7 +20,7 @@ export default class RecipeDetails extends React.Component {
         })
 
         const learnMoreButton = recipe.isHover
-                                ? <button onClick={() => {this.openModal()}}>Learn More</button>
+                                ? <button onClick={() => {this.openModal(recipe)}}>Learn More</button>
                                 : null;
 
         return (

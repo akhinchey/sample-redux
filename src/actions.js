@@ -7,9 +7,10 @@ export const HANDLE_FILTER_CHECK = 'HANDLE_FILTER_CHECK';
 export const HANDLE_FILTER_VISIBILITY = 'HANDLE_FILTER_VISIBILITY';
 export const UPDATE_RESULT_RANGE = 'UPDATE_RESULT_RANGE';
 export const TOGGLE_MODAL_STATUS = 'TOGGLE_MODAL_STATUS';
+export const SET_MODAL_RECIPE = 'SET_MODAL_RECIPE';
 
 
- export const addRecipeParam = (text) => {
+export const addRecipeParam = (text) => {
     return {
         type: ADD_RECIPE_PARAM,
         text: text
@@ -59,5 +60,12 @@ export const updateResultRange = () => {
 export const toggleModalStatus = () => {
     return {
         type: TOGGLE_MODAL_STATUS
+    }
+}
+
+export const setModalRecipe = (recipe) => {
+    return {
+        type: SET_MODAL_RECIPE,
+        recipe: recipe
     }
 }

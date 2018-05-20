@@ -6,7 +6,8 @@ import {
     HANDLE_FILTER_VISIBILITY,
     TOGGLE_RECIPE_HOVER,
     UPDATE_RESULT_RANGE,
-    TOGGLE_MODAL_STATUS
+    TOGGLE_MODAL_STATUS,
+    SET_MODAL_RECIPE
 } from './actions';
 
 
@@ -25,7 +26,8 @@ const initialState = {
     recipes: [],
     dietFilters: dietFilters,
     range: {start: 0, end: 10},
-    modalIsOpen: false
+    modalIsOpen: false,
+    modalRecipe: null
 };
 
 
@@ -108,6 +110,13 @@ const recipeAppReducer = (state = initialState, action) => {
             return {
                 ...state,
                 modalIsOpen: !state.modalIsOpen
+            }
+
+        case SET_MODAL_RECIPE:
+        console.log(action);
+            return {
+                ...state,
+                modalRecipe: action.recipe
             }
 
         default:

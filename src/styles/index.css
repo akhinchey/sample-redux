@@ -10,7 +10,7 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box; }
   .recipe-card--hover {
-    background-color: lightblue;
+    background-color: #d5e7ee;
     border: 1px solid lightgrey;
     border-collapse: collapse;
     overflow: hidden; }

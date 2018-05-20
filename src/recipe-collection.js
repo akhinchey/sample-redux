@@ -20,7 +20,9 @@ export default class RecipeCollection extends React.Component {
                toggleRecipeHover,
                updateResultRange,
                modalIsOpen,
-               toggleModalStatus} = this.props;
+               toggleModalStatus,
+               modalRecipe,
+               setModalRecipe} = this.props;
 
         if (!recipes.length) {
             return null;
@@ -50,6 +52,10 @@ export default class RecipeCollection extends React.Component {
             }
         };
 
+        const label = modalRecipe
+                      ? modalRecipe.data.label
+                      : null;
+
         return (
             <div className={containerClasses}>
                 <h2>Recipe Results:</h2>
@@ -60,7 +66,8 @@ export default class RecipeCollection extends React.Component {
                                     toggleRecipeHover={toggleRecipeHover}
                                     recipe={recipe}
                                     modalIsOpen={modalIsOpen}
-                                    toggleModalStatus={toggleModalStatus} />
+                                    toggleModalStatus={toggleModalStatus}
+                                    setModalRecipe={setModalRecipe} />
                     )
                 })}
                 <Modal isOpen={modalIsOpen}
@@ -69,7 +76,7 @@ export default class RecipeCollection extends React.Component {
                        shouldCloseOnOverlayClick={true}
                        contentLabel="Example Modal">
 
-                    <div>I am a modal</div>
+                    <div>{label}</div>
                     <button onClick={() => {this.closeModal()}}>close modal</button>
                 </Modal>
                 <div>
