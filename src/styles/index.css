@@ -31,3 +31,11 @@
     padding-top: 0; }
   .recipe-card .recipe-details .food-labels {
     padding-bottom: 15px; }
+
+.ReactModal__Overlay {
+  transition: opacity 500ms ease-in-out;
+  opacity: 0; }
+  .ReactModal__Overlay--after-open {
+    opacity: 1; }
+  .ReactModal__Overlay--before-close {
+    opacity: 0; }

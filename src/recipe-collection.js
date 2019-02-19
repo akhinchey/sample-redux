@@ -34,7 +34,7 @@ export default class RecipeCollection extends React.Component {
 
         const modalStyle = {
             overlay : {
-                backgroundColor: 'rgba(105, 105, 105, 0.75)'
+                backgroundColor: 'rgba(200, 200, 200, 0.7)'
             },
             content : {
                 top: 0,
@@ -72,6 +72,7 @@ export default class RecipeCollection extends React.Component {
                 })}
                 <Modal isOpen={modalIsOpen}
                        style={modalStyle}
+                       closeTimeoutMS={150}
                        onRequestClose={this.closeModal}
                        shouldCloseOnOverlayClick={true}
                        contentLabel="Example Modal">
